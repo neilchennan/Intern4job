@@ -46,6 +46,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,14 +55,59 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\Candidate.Gen.cs">
+      <DependentUpon>Intern4jobModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Employer.Gen.cs">
+      <DependentUpon>Intern4jobModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Intern4jobModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Intern4jobModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Intern4jobModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Intern4jobModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Intern4jobModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Intern4jobModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Profession.Gen.cs">
+      <DependentUpon>Intern4jobModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\User.Gen.cs">
+      <DependentUpon>Intern4jobModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <EntityDeploy Include="DAL\Intern4jobModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Intern4jobModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DAL\Intern4jobModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Intern4jobModel.edmx</DependentUpon>
+      <LastGenOutput>Intern4jobModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="DAL\Intern4jobModel.edmx.diagram">
+      <DependentUpon>Intern4jobModel.edmx</DependentUpon>
+    </None>
+    <None Include="DAL\Intern4jobModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Intern4jobModel.edmx</DependentUpon>
+      <LastGenOutput>Intern4jobModel.cs</LastGenOutput>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="DAL\" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
