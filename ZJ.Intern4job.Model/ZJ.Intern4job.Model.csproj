@@ -95,6 +95,7 @@
     <Compile Include="Repository\ProfessionRepository.cs" />
     <Compile Include="Repository\UserRepository.cs" />
     <Compile Include="Service\BusinessService.cs" />
+    <Compile Include="Service\BusinessService.Profession.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
