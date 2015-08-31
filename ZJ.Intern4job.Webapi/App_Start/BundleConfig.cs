@@ -23,7 +23,10 @@ namespace ZJ.Intern4job.Webapi
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/site.css"));
+            bundles.Add(new StyleBundle("~/Content/css").Include(
+                "~/Content/bootstrap.css",
+                "~/Content/bootstrap-table.css",
+                "~/Content/site.css"));
 
             bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
                         "~/Content/themes/base/jquery.ui.core.css",
@@ -38,6 +41,14 @@ namespace ZJ.Intern4job.Webapi
                         "~/Content/themes/base/jquery.ui.datepicker.css",
                         "~/Content/themes/base/jquery.ui.progressbar.css",
                         "~/Content/themes/base/jquery.ui.theme.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
+                      "~/Scripts/bootstrap.js",
+                      "~/Scripts/respond.js",
+                      "~/Scripts/bootstrap-table.js",
+                      "~/Scripts/bootstrap-table-zh-CN.js",
+                      "~/Scripts/jquery.bootstrap.min.js"
+                      ));
         }
     }
 }

@@ -1,12 +1,15 @@
-﻿<!DOCTYPE html>
+﻿@*<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script type="text/javascript" src="~/UserScripts/Common.js"></script>
 </head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <body>
@@ -21,6 +24,7 @@
                     <ul id="menu">
                         <li>@Html.ActionLink("主页", "Index", "Home", new { area = "" }, null)</li>
                         <li>@Html.ActionLink("API", "Index", "Help", new { area = "" }, null)</li>
+                        <li>@Html.ActionLink("测试Profession API", "Index", "ProfessionsTest", new { area = "" }, null)</li>
                     </ul>
                 </nav>
             </div>
@@ -29,6 +33,59 @@
     @RenderBody()
 
     @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
+</html>*@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @*<link rel="stylesheet" href="~/Content/zTreeStyle/zTreeStyle.css" type="text/css">*@
+    @*<link rel="stylesheet" href="~/Content/zTreeStyle/demo.css" type="text/css">*@
+    <script type="text/javascript" src="~/UserScripts/Common.js"></script>
+    @*<script type="text/javascript" src="~/Scripts/jquery.ztree.all-3.5.js"></script>*@
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Intern4job", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
+                    <li>@Html.ActionLink("API", "Index", "Help", new { area = "" }, null)</li>
+                    <li>@Html.ActionLink("测试User API", "Index", "UserTest", new { area = "" }, null)</li>
+                    <li>@Html.ActionLink("测试Profession API", "Index", "ProfessionsTest", new { area = "" }, null)</li>
+                    @*<li>@Html.ActionLink("配置User", "Index", "UserConfig", new { area = "" }, null)</li>
+                    <li>@Html.ActionLink("配置权限", "Index", "PermissionConfig", new { area = "" }, null)</li>
+                    <li>@Html.ActionLink("配置权限组", "Index", "PermissionGroupConfig", new { area = "" }, null)</li>*@
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+
     @RenderSection("scripts", required: false)
 </body>
 </html>
